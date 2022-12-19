@@ -21,7 +21,15 @@
     \centering
     \includegraphics[height=0.8\textheight]{figs/time_series.png}
 \end{figure}
+\end{frame}
 
+\begin{frame}
+  \frametitle{\insertsectionhead}
+\framesubtitle{\insertsubsectionhead}
+\begin{figure}
+  \centering
+  \includegraphics[height=0.8\textheight]{figs/eeg_intro.png}
+\end{figure}
 \end{frame}
 
 \section{Hypothesis Testing}
@@ -44,12 +52,12 @@
     \item accept or reject the Hypothesis
     \item discriminating statistics $T$
   \end{itemize}
-  \begin{table}[]
-    \centering
-    \begin{tabular}{lllll}
-                 & $H_0$                   & $H_1$                   &  &  \\
-    Result $H_0$ & correct                 & Type II error ($\beta$) &  &  \\
-    Result $H_1$ & Type I error ($\alpha$) & correct                 &  &  
+  \begin{table}
+    \centering 
+    \begin{tabular}{lll}
+                 & accept $H_0$ & reject $H_0$ \\
+    Result $H_0$ & correct      &Type I error ($\alpha$)  \\
+    Result $H_1$ & Type II error ($\beta$) & correct  
     \end{tabular}
     \end{table}
     \begin{itemize}
@@ -64,7 +72,7 @@
 \begin{frame}
 \frametitle{\insertsectionhead}
 \framesubtitle{\insertsubsectionhead}
-let $\mathcal{F}$ be the space of all processes under consideration and $\mathcal{F}_\phi\subset \mathcal{F}$ the processes which are consistent with the null hypothesis. According to the Null Hypothesis the process $F$ that generated the data, is an element of $\mathcal{F}_\phi$. If $\mathcal{F}_\phi$ consists just a single member, the Null Hypothesis is \textit{single} otherwise it is \textit{composite} \cite{THEILER1996221}
+Let $\mathcal{F}$ be the space of all processes under consideration and $\mathcal{F}_\phi\subset \mathcal{F}$ the processes which are consistent with the null hypothesis. According to the Null Hypothesis the process $F$ that generated the data, is an element of $\mathcal{F}_\phi$. If $\mathcal{F}_\phi$ consists just a single member, the Null Hypothesis is \textit{single} otherwise it is \textit{composite} \cite{THEILER1996221}
 \end{frame}
 
 \section{Surrogates}
@@ -78,6 +86,7 @@ let $\mathcal{F}$ be the space of all processes under consideration and $\mathca
     \item[Hénon map:] $ \vec{x}_{n+1} = \begin{cases} x_{n+1} = 1 - a x_n^2+y_n\\ y_{n+1} = b x_n \end{cases}$
   \end{description}
   \begin{itemize}
+
     \item Confidence interval $95\,\%$ ($\alpha=0.05$)
     \item $T$ must be \textit{pivotal} ($T$ is the same $\forall F \in \mathcal{F}_\phi)$ if NH is composite
     \item often only in limit $n\to\infty$
@@ -91,7 +100,7 @@ let $\mathcal{F}$ be the space of all processes under consideration and $\mathca
 \begin{itemize}
   \item Generating random variables according to a distribution
   \item Use these variables to simulate an experiment 
-  \item possible with any distribution with MC 
+  \item with MC any distribution is possible to set up
   \item Bootstraps $\rightarrow$ measuring error bars 
   \item Testing Null Hypothesis
 \end{itemize}
@@ -281,9 +290,9 @@ discriminating statistic
 \begin{frame}
   \frametitle{\insertsectionhead}
   \framesubtitle{\insertsubsectionhead}
-  reconstruct $m$-dimensional phase space with $x(t), x(t-\tau), x(t-2\tau), \ldots$ as axes
+  reconstruct $m$-dimensional space with $x(t), x(t-\tau), x(t-2\tau), \ldots$ as axes
   \begin{itemize}
-    \item \textbf{Takens's Theorem}: for right $\tau$ and enough dimensions $m$ the embedded dynamics has the same topology as the original state-space of the system
+    \item \textbf{Takens's Theorem}: for right $\tau$ and enough dimensions $m$ the embedded dynamics have the same topology as the original state-space dynamics
   \end{itemize}
 \end{frame}
 
